@@ -1,3 +1,18 @@
 <%= @title = "Homepage" %>
 <h1>Welcome to Instagram!</h1>
+<%if signed_in?%>
+<h2><%= current_user.username%></h2>
+  <li><%= link_to current_user.username, "/users/#{current_user.id}" %></li>
+  <li><%= link_to "edit", edit_user_path(current_user) %></li>
+  <li><%= link_to "delete", current_user, method: :delete,
+                                  data: { confirm: "Are you sure?" } %></li>
+
+
+
+<%end%>
+
+
+
+
+
 

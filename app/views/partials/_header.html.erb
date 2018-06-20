@@ -8,4 +8,17 @@
       <li>
         <a href="/contact">Contact</a>
       </li>
+      
+        <%if signed_in? %>
+        <li>
+          
+        
+          <%= link_to "logout", logout_path, method: :delete, data: { confirm: "Are you sure?"} %></li>
+          <%else%>
+          <li>
+          <%= link_to "login", login_path %></li>
+          
+
+      </li>
+      <%end%>
     </ul>
